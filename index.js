@@ -12,7 +12,7 @@ var server = app.listen(PORT, () => {
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: 'https://master.d1cwd691lheo6s.amplifyapp.com/',
+        origin: 'https://master.d1cwd691lheo6s.amplifyapp.com',
         methods: ['GET'],
         headers: {
             'Access-Control-Allow-Origin' : '*'
