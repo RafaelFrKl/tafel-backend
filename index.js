@@ -5,7 +5,7 @@ const https = require('https')
 const server = https.createServer(app)
 const io = require('socket.io')(server, {
     cors: {
-        origin: '*',
+        origin: 'https://master.d1cwd691lheo6s.amplifyapp.com/'
     }
 })
 const cors = require('cors')
