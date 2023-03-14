@@ -4,8 +4,10 @@ const app = express()
 const https = require('https')
 const server = https.createServer(app)
 const io = require('socket.io')(server, {
-    cors: {
-        origin: 'https://master.d1cwd691lheo6s.amplifyapp.com/'
+    origin: 'https://master.d1cwd691lheo6s.amplifyapp.com/',
+    methods: ['GET'],
+    headers: {
+        'Access-Control-Allow-Origin' : '*'
     }
 })
 const cors = require('cors')
