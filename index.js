@@ -21,12 +21,17 @@ const io = require('socket.io')(server, {
 })
 
 io.on('connection', (socket) => {
-    console.log('A user connected on socket: ' + socket.id + '.\nAdditional socket handshake info:\n' + socket.handshake);
+    console.log('A user connected on socket: ' + socket.id + '.\nAdditional socket handshake info:\n' + socket.handshake)
 
     socket.on('canvas-data', (data) => {
-        console.log('Data received server side from ' + socket.id);
+        console.log('Data received server side from ' + socket.id)
         socket.broadcast.emit('canvas-data', data)
-        console.log('Data from ' + socket.id + ' sent to all clients');
+        console.log('Data from ' + socket.id + ' sent to all clients')
+    })
+
+    socket.on('clear-data', (data) => {
+        socket.broadcast.emit('clear-data', data)
+        console.log(data)
     })
 })
 
